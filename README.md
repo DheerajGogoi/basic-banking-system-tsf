@@ -1,7 +1,7 @@
 # Task #1 Basic Banking System
 ## ***[The Sparks Foundation](https://www.linkedin.com/company/the-sparks-foundation/mycompany/)***
 
-## This website is the Task #1 project made by Dheeraj Gogoi Web development and Designing intern at The Sparks Foundation for May'21 batch.
+## This website is the Task #1 project made by Dheeraj Gogoi - Web development and Designing intern at The Sparks Foundation for May'21 batch.
 
 Task Description:
 - Create a simple dynamic website which has the following specs.
