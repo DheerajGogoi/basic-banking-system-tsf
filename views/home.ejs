@@ -1,0 +1,90 @@
+<%- include("partials/header") -%>
+
+    <!-- Modal transfer START -->
+    <div class="modal fade" id="transferModal" tabindex="-1" aria-labelledby="transferModelLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="color: black;" class="modal-title" id="transferModelLabel">Transfer Money</h5>
+                </div>
+                <div class="modal-body" style="color: black; height: 30rem; overflow-y: scroll;">
+                    <div class="transfer-to-form">
+                        <form action="/transfer" method="post" autocomplete="off">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1" style="font-family: 'Roboto Mono', monospace;                             font-weight: bolder;
+                                color: black;">Select Account No</label>
+                                <select class="form-control" name="ac" id="exampleFormControlSelect1">
+                                  <%for(var i = 0; i < AllCustomers.length; i++){%>
+                                    <option><%= AllCustomers[i].fname %> <%= AllCustomers[i].lname %> A/C No. <%= AllCustomers[i].ano %></option>
+                                  <%}%>
+                                </select>
+                              </div>
+                            <div class="form-group">
+                                <label for="amount" class="amount-transfer">Amount To be transfered (in Rs.)</label>
+                                <input type="text" class="form-control" id="amount" name="amount" required>
+                            </div>
+                            <button style="font-family: 'Roboto', sans-serif; font-weight: bold;" type="submit" class="btn btn-success w-100">Transfer Money</button>
+                        </form>
+                    </div>
+
+                    <br><br>
+
+                    <h5 class="transfer-history-header">Transfer History</h5>
+                    <%for(var i = Transactions.length-1; i >= 0; i--){%>
+                        <div class="trans-info card">
+                            <div class="card-body trans-details">
+                                <span>Name: <%=Transactions[i].name%></span>
+                                <br>
+                                <span>Transaction ID: <%=Transactions[i].transid%></span>
+                                <br>
+                                <span>Amount Transfered: Rs. <%=Transactions[i].amount%></span>
+                                <br>
+                                <span class="trans-time"><%=Transactions[i].date%></span>
+                            </div>
+                        </div>
+                        <br>
+                    <%}%>
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal transfer end -->
+
+    <!-- HOME START -->
+    <section class="home-section">
+        <div class="container">
+
+            <%if(success != ''){%>
+                <div style="font-family: 'Roboto', sans-serif;" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success: </strong> <%= success %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+            <%}%>
+
+            <h1 class="home-header">T.S.F. Banking</h1>
+            <div class="row">
+                <div class="col-lg-6 my-3 home-text">
+                    T.S.F. Banking is a basic banking system. It's objective is to demonstrate the real banking procedure. Operations like transfer money, see all customers and check out details of individual customers are possible here. The website also allows users to check their transaction history.
+                    <br>
+                    <br>
+                    Flow: Home Page > View all Customers > Select and View one              Customer > Transfer Money > Select customer to transfer to >
+                    View all Customers.
+                    <div class="home-button">
+                        <a href="/customers"><button style="font-family: 'Roboto', sans-serif; font-weight: bold;margin-right: 0.4rem;" type="button" class="btn btn-warning font-weight-bolder">See all Customers</button></a>
+                        <a href="/"  data-toggle="modal" data-target="#transferModal"><button style="font-family: 'Roboto', sans-serif; font-weight: bold;" type="button" class="btn btn-success font-weight-bolder">Transfer Money</button></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 my-3"><img class="img-fluid home-pic" src="/img/1.png" alt="pic"></div>
+            </div>
+        </div>
+    </section>
+    <!-- HOME END -->
+
+    <%- include("partials/footer") -%>

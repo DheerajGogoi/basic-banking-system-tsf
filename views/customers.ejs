@@ -1,0 +1,24 @@
+<%- include("partials/header") -%>
+    <section class="customers-section">
+        <div class="container">
+            <h1 class="customers-header" ><span>Registered Customers</span></h1>
+            <div class="row">
+                <%for(let i = 0; i < AllCustomers.length; i++){%>
+                    <div class="col-lg-4 col-md-6 customer-col">
+                        <div class="card customer-card">
+                            <div class="card-body">
+                                <p><a class="customer-name" href="/customers/<%= AllCustomers[i]._id %>"><%= AllCustomers[i].fname %> <%= AllCustomers[i].lname %></a></p>
+                                <p class="customer-bal">A/C No: <%= AllCustomers[i].ano %></p>
+                                <p class="customer-bal">A/C Balance: Rs. <%= AllCustomers[i].balance %></p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/transferto/<%= AllCustomers[i]._id %>"><button style="margin-right: 0.5rem;font-family: 'Roboto', sans-serif; font-weight: bold;" type="button" class="btn btn-success">Transfer</button></a>
+                                <a href="/customer/<%= AllCustomers[i]._id %>"><button style="font-family: 'Roboto', sans-serif; font-weight: bold;" type="button" class="btn btn-warning">Details</button></a>
+                            </div>
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+            
+    </section>
+    <%- include("partials/footer") -%>

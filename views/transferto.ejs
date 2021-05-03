@@ -1,0 +1,49 @@
+<%- include("partials/header") -%>
+
+    <!-- TRANSFER START -->
+    <section class="transfer-to-section">
+        <div class="container">
+            <%if(success != ''){%>
+                <div style="font-family: 'Roboto', sans-serif;" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success: </strong> <%= success %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+            <%}%>
+            <h1 class="transfer-to-header">Transfer Money</h1>
+            <div class="customer-details">
+                <div class="card details-card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><span style="font-weight: bolder;">Customer's Name:</span> <%= Details.fname %> <%= Details.lname %></p>
+                                <p><span style="font-weight: bolder;">Account Number:</span> <%= Details.ano %></p>
+                                <p><span style="font-weight: bolder;">Current Balance:</span> Rs. <%= Details.balance %></p>
+                                <p><span style="font-weight: bolder;">Bank Name:</span> <%= Details.bank %></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p><span style="font-weight: bolder;">Email Id:</span> <%= Details.email %></p>
+                                <p><span style="font-weight: bolder;">Phone Number:</span> <%= Details.phone %></p>
+                                <p><span style="font-weight: bolder;">Home Address:</span> <%= Details.address %></p>
+                                <p><span style="font-weight: bolder;">Account created on:</span> <%= Details.date %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="transfer-to-form">
+                <form action="/transferto/<%= Details.id %>" method="post" autocomplete="off">
+                    <div class="form-group">
+                        <label for="amount" class="amount-transfer">Amount To be transfered (in Rs.)</label>
+                        <input type="text" class="form-control" id="amount" name="amount" required>
+                    </div>
+                    <button style="font-family: 'Roboto', sans-serif; font-weight: bold;" type="submit" class="btn btn-success w-100">Transfer Money</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- TRANSFER END -->
+
+
+    <%- include("partials/footer") -%>

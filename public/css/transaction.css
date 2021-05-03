@@ -1,0 +1,119 @@
+.questions-padding{
+    padding: 4% 10%;
+    align-items: center;
+}
+
+.textDecoration{
+    text-decoration: none;
+}
+
+.onhover{
+    transition: 0.4s all ease;
+}
+
+.onhover:hover{
+    background-color: rgb(192, 192, 192);
+}
+
+.size{
+    font-size: 3rem;
+}
+
+.card-body{
+    text-align: justify;
+}
+
+i{
+    font-size: 1.5rem;
+}
+
+i:hover{
+    color: blue;
+}
+
+.card, .card-header{
+    background-color: rgb(34, 34, 65);
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 20px;
+}
+
+.card{
+    box-shadow: 0 2px 20px 0 rgba(27, 36, 83, 0.18);
+}
+
+.card-body{
+    background: #151425;
+}
+
+.btn-link{
+    width: 100%;
+    height: 60px;
+    color: #000 !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    font-family: 'Quicksand' !important;
+}
+
+.btn-link::after{
+    content: '\2212';
+    width: 35px;
+    font-size: 25px;
+    text-align: center;
+    right: 15px;
+    top: 11px;
+    position: absolute;
+    background: rgb(39, 39, 66);
+}
+
+.btn-link.collapsed:after{
+    content: '\002B';
+}
+
+.btn-link:before{
+    content: '';
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background: rgb(34, 34, 65);;
+    z-index: 1;
+    transform: rotate(45deg);
+    left: 30px;
+    top: 46px;
+}
+
+/* ------------------- */
+
+
+/* .btn-block{
+    border: none;
+    background: none;
+    font-size: 1.3rem;
+    font-family: 'Quicksand';
+    font-weight: bolder;
+} */
+
+@media (max-width: 410px){
+
+    .btn-link:before{
+        content: none;
+    }
+}
+
+
+
+/* <div class="card ">
+                    <div class="card-header" id="<%= Transactions[i].ano %>">
+                        <h2 class="mb-0">
+                        <button class="btn btn-link collapsed q1" type="button" data-toggle="collapse" data-target="#<%= Transactions[i]._id %>" aria-expanded="false" aria-controls="<%= Transactions[i]._id %>">
+                            Lorem ipsum dolor sit amet consectetur ?
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="<%= Transactions[i]._id %>" class="collapse" aria-labelledby="<%= Transactions[i].ano %>" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus nulla eligendi omnis dolores harum. Veritatis quae quas aliquam ducimus soluta, quo, at modi eos a minima maxime deserunt, deleniti autem.
+                        </div>
+                    </div>
+                </div> */
