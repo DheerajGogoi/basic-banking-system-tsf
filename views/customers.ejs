@@ -1,4 +1,37 @@
 <%- include("partials/header") -%>
+    <section class="customers-section-table">
+        <div class="container">
+            <h1 class="customers-header" ><span>Registered Customers</span></h1>
+            <div class="customers-table">
+                <table class="table">
+                    <thead>
+                      <tr style="color: white;font-family: 'Roboto Mono', monospace;">
+                        <th scope="col">#</th>
+                        <th scope="col">Holder's Name</th>
+                        <th scope="col">A/C No</th>
+                        <th scope="col">Current Balance</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody style="color: white; font-size: 1.2rem;font-family: 'Roboto Mono', monospace;">
+                        <%for(let i = 0; i < AllCustomers.length; i++){%>
+                            <tr>
+                                <th scope="row"><%= i+1 %></th>
+                                <td><span class="customer-name-table"><%= AllCustomers[i].fname %> <%= AllCustomers[i].lname %></span></td>
+                                <td class="customer-bal"><%= AllCustomers[i].ano %></td>
+                                <td class="customer-bal"><%= AllCustomers[i].balance %></td>
+                                <td>
+                                    <a href="/transferto/<%= AllCustomers[i]._id %>"><button style="margin-right: 0.5rem;font-family: 'Roboto', sans-serif; font-weight: bold;" type="button" class="btn btn-success">Transfer</button></a>
+                                    <a href="/customer/<%= AllCustomers[i]._id %>"><button style="font-family: 'Roboto', sans-serif; font-weight: bold;" type="button" class="btn btn-warning">Details</button></a>
+                                </td>
+                              </tr>
+                        <%}%>
+                    </tbody>
+                  </table>
+            </div>
+        </div>    
+    </section>
+
     <section class="customers-section">
         <div class="container">
             <h1 class="customers-header" ><span>Registered Customers</span></h1>
@@ -7,7 +40,7 @@
                     <div class="col-lg-4 col-md-6 customer-col">
                         <div class="card customer-card">
                             <div class="card-body">
-                                <p><a class="customer-name" href="/customers/<%= AllCustomers[i]._id %>"><%= AllCustomers[i].fname %> <%= AllCustomers[i].lname %></a></p>
+                                <p><a class="customer-name" href="/customer/<%= AllCustomers[i]._id %>"><%= AllCustomers[i].fname %> <%= AllCustomers[i].lname %></a></p>
                                 <p class="customer-bal">A/C No: <%= AllCustomers[i].ano %></p>
                                 <p class="customer-bal">A/C Balance: Rs. <%= AllCustomers[i].balance %></p>
                             </div>
@@ -19,6 +52,6 @@
                     </div>
                 <%}%>
             </div>
-            
+        </div>    
     </section>
     <%- include("partials/footer") -%>
