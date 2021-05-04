@@ -225,20 +225,6 @@ app.get('/about', function (req, res) {
 });
 // WEBSITE ROUTES END 
 
-
-
-//SAVING CUSTOMERS START
-// const newCustomer = new Customer({
-//     fname: req.body.fname,
-//     lname: req.body.lname,
-//     balance: req.body.balance,
-//     email: req.body.email,
-//     phone: req.body.phone,
-// })
-
-// newCustomer.save();
-//SAVING CUSTOMERS END
-
 const port = process.env.PORT || 5000
 
 app.listen(port, function () {
