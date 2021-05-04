@@ -18,7 +18,7 @@ button:focus {
 /* NAVBAR START */
 
 .bg-color{
-    background: rgba(6, 13, 27, 0.9);;
+    background: rgba(6, 13, 27, 0.9);
 }
 .navbar-brand{
     /* font-family: 'Raleway', sans-serif; */
@@ -78,6 +78,11 @@ button:focus {
 .customers-section{
     padding-top: 3rem;
     padding-bottom: 3rem;
+    display: none;
+}
+.customers-section-table{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 .customers-header{
     font-size: 2.5rem;
@@ -103,10 +108,21 @@ button:focus {
     font-size: 1.5rem;
     font-weight: bolder;
 }
+.customer-name-table{
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2rem;
+}
 .customer-bal{
     font-family: 'Roboto Mono', monospace;
 }
 .customer-name:hover{
+    color: orange;
+    text-decoration: none;
+}
+.customer-name-table:hover{
     color: orange;
     text-decoration: none;
 }
@@ -275,5 +291,14 @@ button:focus {
 @media screen and (max-width: 569px){
     .details-card{
         padding : 0;
+    }
+}
+
+@media screen and (max-width: 705px){
+    .customers-section-table{
+        display: none;
+    }
+    .customers-section{
+        display: inline;
     }
 }
